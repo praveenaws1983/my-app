@@ -3,7 +3,7 @@ properties([parameters([choice(choices: 'master\ndev\nsit\nuat', description: 's
 node{
    stage ('SCM Checkout') {
       echo 'pulling the changes form ${params.branch}'
-      git url: 'https://github.com/praveenaws1983/my-app', branch: '${params.branch}'
+      git url: 'https://github.com/praveenaws1983/my-app', branch: "${params.branch}"
    }
    stage ('Compile-Package'){
     def mvnHome = tool name: 'maven-3', type: 'maven'
