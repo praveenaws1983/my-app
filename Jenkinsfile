@@ -14,9 +14,9 @@ node{
          nexusArtifactUploader artifacts: 
             [
                [
-                  artifactId: 'my-app', 
+                  artifactId: 'myweb', 
                   classifier: '', 
-                  file: 'target/my-app.1.0.0.war', 
+                  file: 'target/myweb.1.0.0.war', 
                   type: 'war'
                ]
             ],
