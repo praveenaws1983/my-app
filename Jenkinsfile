@@ -10,23 +10,23 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    stage ('upload war to artifactory'){
-      steps {
+      steps{
          nexusArtifactUploader artifacts: 
-            [
                [
-                  artifactId: 'myweb', 
-                  classifier: '', 
-                  file: 'target/myweb.1.0.0.war', 
-                  type: 'war'
-               ]
-            ],
-            credentialsId: 'nexusid', 
-            groupId: 'in.javahome', 
-            nexusUrl: '3.236.115.10:8081', 
-            nexusVersion: 'nexus3', 
-            protocol: 'http', 
-            repository: 'myapprelease', 
-            version: '1.0.0'
+                  [
+                     artifactId: 'myweb', 
+                     classifier: '', 
+                     file: 'target/myweb.1.0.0.war', 
+                     type: 'war'
+                  ]
+               ],
+               credentialsId: 'nexusid', 
+               groupId: 'in.javahome', 
+               nexusUrl: '3.236.115.10:8081', 
+               nexusVersion: 'nexus3', 
+               protocol: 'http', 
+               repository: 'myapprelease', 
+               version: '1.0.0'
       }
    }
    stage ('deploy war to tomcat'){
